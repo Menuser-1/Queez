@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GOLDEN MIND — Daily Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>GOLDEN<span class="gold">MIND</span><small>DAILY CHALLENGE</small></span></a>
+    <div class="top-actions">
+      <select id="language" aria-label="Language"><option value="en">English</option><option value="ur">اردو</option></select>
+      <button id="loginOpen" class="btn btn-quiet" data-i18n="login">Log in</button>
+      <button id="registerOpen" class="btn btn-gold" data-i18n="join">Create ID</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span><span data-i18n="daily">A NEW CHALLENGE EVERY DAY</span></div>
+      <h1 data-i18n="headline">Your mind.<br><span class="gold">Your moment.</span></h1>
+      <p class="hero-copy" data-i18n="subhead">Fresh questions, a sharper mind, and a new reason to come back tomorrow.</p>
+      <div class="hero-stats">
+        <div><strong id="questionCount">10</strong><span data-i18n="questions">QUESTIONS</span></div>
+        <div><strong id="dayLabel">TODAY</strong><span data-i18n="dailySet">DAILY QUESTION SET</span></div>
+        <div><strong id="userLabel">GUEST</strong><span data-i18n="player">PLAYER</span></div>
+      </div>
+    </section>
+    <section class="quiz-shell">
+      <div class="quiz-head"><div><span class="section-kicker" data-i18n="challenge">THE CHALLENGE</span><h2 id="quizTitle" data-i18n="general">General Knowledge</h2></div><span class="pill"><span class="live-dot"></span><span data-i18n="live">LIVE DAILY SET</span></span></div>
+      <div class="progress-row"><span id="progressText">Question 1 of 10</span><span id="scoreText">Score: 0</span></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div id="quizArea">
+        <div class="question-number" id="questionNumber">QUESTION 01</div>
+        <h3 id="questionText">Loading today's question…</h3>
+        <div id="answers" class="answers"></div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <div class="quiz-controls"><button id="nextBtn" class="btn btn-gold" disabled data-i18n="next">Next question →</button><button id="restartBtn" class="btn btn-quiet hidden" data-i18n="restart">Try again</button></div>
+      </div>
+      <div id="resultArea" class="result-area hidden"><div class="result-icon">✦</div><div class="section-kicker" data-i18n="complete">CHALLENGE COMPLETE</div><h3 id="resultTitle">Well played.</h3><p id="resultCopy"></p><button id="playAgain" class="btn btn-gold" data-i18n="again">Play daily quiz again</button></div>
+    </section>
+    <section class="bottom-strip"><span>✦ <span data-i18n="consistency">Consistency builds brilliance.</span></span><span id="dateText"></span></section>
+  </main>
+  <footer>GOLDENMIND <span>•</span> <span data-i18n="footer">A little smarter every day.</span></footer>
+  <div class="modal hidden" id="authModal"><div class="modal-card"><button id="closeModal" class="close" aria-label="Close">×</button><div class="section-kicker" id="authEyebrow">YOUR ACCOUNT</div><h2 id="authTitle">Create your ID</h2><p id="authDesc">Save your progress and keep your daily streak going.</p><form id="authForm"><label data-i18n="username">Username</label><input id="username" minlength="3" required autocomplete="username" placeholder="e.g. goldenplayer"><label data-i18n="password">Password</label><input id="password" type="password" minlength="8" required autocomplete="current-password" placeholder="At least 8 characters"><button class="btn btn-gold full" id="authSubmit" type="submit">Create ID</button></form><p id="authMessage" class="auth-message"></p><button id="switchAuth" class="text-link">Already have an account? Log in</button></div></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="config.js"></script>\n  <script src="app.js"></script>
+</body></html>
